@@ -11,7 +11,9 @@ class Chronometer {
 if(callback)callback()
 
 } ,1000)
+
   }
+  
 
   getMinutes() {
     // ... your code goes here

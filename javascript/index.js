@@ -15,6 +15,8 @@ const splitsElement = document.getElementById('splits');
 
 function printTime() {
   // ... your code goes here
+
+
 }
 
 function printMinutes() {
@@ -32,6 +34,7 @@ function printMilliseconds() {
 
 function printSplit() {
   // ... your code goes here
+  
 }
 
 function clearSplits() {
@@ -40,26 +43,68 @@ function clearSplits() {
 
 function setStopBtn() {
   // ... your code goes here
+  btnLeftElement.className = "btn stop"
+  btnLeftElement.innerHTML ="STOP"
 }
 
 function setSplitBtn() {
   // ... your code goes here
+  btnRightElement.className ="btn split"
+  btnRightElement.innerHTML ="SPLIT"
+  
 }
 
 function setStartBtn() {
   // ... your code goes here
+  btnLeftElement.className = "btn start"
+  btnLeftElement.innerHTML = "START"
+  
 }
 
 function setResetBtn() {
   // ... your code goes here
+
+  btnRightElement.className = "btn reset"
+  btnRightElement.innerHTML = "RESET";
+
 }
 
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
-  // ... your code goes here
+ 
+ if (btnLeftElement.innerHTML ==="START"){
+
+ var inner= document.getElementsByClassName('.number');
+ inner.innerText = chronometer.start(this.computeTwoDigitNumber)
+  
+
+
+}
+
+
+  
+
+
+
+ else{
+   setResetBtn()
+   setStartBtn() 
+ }
+
 });
 
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
-  // ... your code goes here
-});
+  var li = document.createElement('li');
+
+const split = document.getElementById('splits')
+
+split.appendChild(li).innerText= chronometer.split();
+split.classList.add("list-item");
+
+console.log(split);
+
+  
+}
+
+);
